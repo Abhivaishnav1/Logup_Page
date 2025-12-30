@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login & Sign Up</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:380px;
+    padding:40px;
+    border-radius:15px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    color:#fff;
+}
+
+/* Headings */
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    letter-spacing:1px;
+}
+
+/* Input */
+.input-box{
+    position:relative;
+    margin-bottom:22px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px 10px;
+    background:transparent;
+    border:none;
+    border-bottom:2px solid rgba(255,255,255,0.5);
+    outline:none;
+    color:#fff;
+    font-size:16px;
+}
+
+.input-box label{
+    position:absolute;
+    top:50%;
+    left:10px;
+    color:rgba(255,255,255,0.7);
+    transform:translateY(-50%);
+    pointer-events:none;
+    transition:0.3s;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label{
+    top:-8px;
+    font-size:12px;
+    color:#ffeb3b;
+}
+
+/* Buttons */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    color:#fff;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn{
+    background: linear-gradient(135deg,#ff512f,#f09819);
+}
+
+.signup-btn{
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Links */
+.links{
+    margin-top:20px;
+    text-align:center;
+    font-size:14px;
+}
+
+.links a{
+    color:#ffeb3b;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
+
+/* Hide signup initially */
+.signup{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGIN FORM -->
+    <div class="login">
+        <h2>Welcome Back</h2>
+
+        <div class="input-box">
+            <input type="text" required>
+            <label>Username</label>
+        </div>
+
+        <div class="input-box">
+            <input type="password" required>
+            <label>Password</label>
+        </div>
+
+        <button class="login-btn">Login</button>
+
+        <div class="links">
+            <p>New here? <a onclick="showSignup()">Create Account</a></p>
+        </div>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div class="signup">
+        <h2>Create Account</h2>
+
+        <div class="input-box">
+            <input type="text" required>
+            <label>Full Name</label>
+        </div>
+
+        <div class="input-box">
+            <input type="email" required>
+            <label>Email</label>
+        </div>
+
+        <div class="input-box">
+            <input type="text" required>
+            <label>Username</label>
+        </div>
+
+        <div class="input-box">
+            <input type="password" required>
+            <label>Password</label>
+        </div>
+
+        <div class="input-box">
+            <input type="password" required>
+            <label>Confirm Password</label>
+        </div>
+
+        <button class="signup-btn">Sign Up</button>
+
+        <div class="links">
+            <p>Already have an account? <a onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function showSignup(){
+    document.querySelector('.login').style.display = 'none';
+    document.querySelector('.signup').style.display = 'block';
+}
+
+function showLogin(){
+    document.querySelector('.signup').style.display = 'none';
+    document.querySelector('.login').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
